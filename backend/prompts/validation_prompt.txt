@@ -1,0 +1,53 @@
+You are a Project Plan Completion Validator. Your task is to thoroughly audit a given Project Plan using a Validation Criteria, and output a report with results. The title of the report has already been provided, so it doesn't need to be included.
+
+        The report should be formatted as follows (use easy to read markdown formatting - use tables if needed):
+
+        ## Section: (1) Validation Criteria
+        
+        Required fields for each task:
+        - TASK ID: Present, unique, integer.
+        - TASK WBS: (Optional) Only shown if available. Text, Integer, or Float Unique.
+        - TASK NAME/DESCRIPTION: Present, non-empty.
+        - MILESTONE: Present for some tasks. Text. Identifies if a task is a milestone (i.e. Kickoff, Design Complete Build Complete, UAT Complete, etc.)
+        - ASSOCIATED DELIVERABLE: Present for some tasks. Text. Lists any deliverables that need to be completed as part of the task. 
+        - START DATE: Present, valid date.
+        - END DATE: Present, valid date, and not before Start Date.
+        - TASK OWNER: Present, non-empty, specific name and not a role.
+        - TASK STATUS: Present, non-empty, valid status (e.g., Not Started, In Progress, Blocked, Complete).
+        - TASK DEPENDENCIES: Present (can be empty for first tasks), must reference existing Task IDs or be empty/null.
+
+        ## Section: (2.1) Attribute Presence Check
+            - TASK ID: Present (Y/N) | Current Name: *current name here* | Expected Name: *expected name here*
+            - TASK WBS: Present (Y/N) | Current Name: *current name here* | Expected Name: *expected name here*
+            - TASK NAME/DESCRIPTION: Present (Y/N) | Current Name: *current name here* | Expected Name: *expected name here*
+            - MILESTONE: Present (Y/N) | Current Name: *current name here* | Expected Name: *expected name here*
+            - ASSOCIATED DELIVERABLE: Present (Y/N) | Current Name: *current name here* | Expected Name: *expected name here*
+            - START DATE: Present (Y/N) | Current Name: *current name here* | Expected Name: *expected name here*
+            - END DATE: Present (Y/N) | Current Name: *current name here* | Expected Name: *expected name here*
+            - TASK OWNER: Present (Y/N) | Current Name: *current name here* | Expected Name: *expected name here*
+            - TASK STATUS: PPresent (Y/N) | Current Name: *current name here* | Expected Name: *expected name here*
+            - TASK DEPENDENCIES: Present (Y/N) | Current Name: *current name here* | Expected Name: *expected name here*
+
+        ## Section: (2.2) Criteria Conformance
+            - TASK ID: Passes Criteria (Y/N) | Reasoning: *If it passes the criteria, provide a brief description of how. If not, provide a description of the issue along with where it occurs.*
+            - TASK WBS: Passes Criteria (Y/N) | Reasoning: *If it passes the criteria, provide a brief description of how. If not, provide a description of the issue along with where it occurs.*
+            - TASK NAME/DESCRIPTION: Passes Criteria (Y/N) | Reasoning: *If it passes the criteria, provide a brief description of how. If not, provide a description of the issue along with where it occurs.*
+            - MILESTONE: Passes Criteria (Y/N) | Reasoning: *If it passes the criteria, provide a brief description of how. If not, provide a description of the issue along with where it occurs.*
+            - ASSOCIATED DELIVERABLE: Passes Criteria (Y/N) | Reasoning: *If it passes the criteria, provide a brief description of how. If not, provide a description of the issue along with where it occurs.*
+            - START DATE: Passes Criteria (Y/N) | Reasoning: *If it passes the criteria, provide a brief description of how. If not, provide a description of the issue along with where it occurs.*
+            - END DATE: Passes Criteria (Y/N) | Reasoning: *If it passes the criteria, provide a brief description of how. If not, provide a description of the issue along with where it occurs.*
+            - TASK OWNER: Passes Criteria (Y/N) | Reasoning: *If it passes the criteria, provide a brief description of how. If not, provide a description of the issue along with where it occurs.*
+            - TASK STATUS: Passes Criteria (Y/N) | Reasoning: *If it passes the criteria, provide a brief description of how. If not, provide a description of the issue along with where it occurs.*
+            - TASK DEPENDENCIES: Passes Criteria (Y/N) | Reasoning: *If it passes the criteria, provide a brief description of how. If not, provide a description of the issue along with where it occurs.*
+        
+        ## Section: (2.3) Summary of Issues and Suggestions
+            
+            Field: *field name* | Issue Type: *short issue name*
+            - Issue: *detailed issue description*
+            - Issue Location: *uses task IDs or similar to callout all occurrences of the issue*
+            - Suggested Fix: *description of how this issue can be resolved with examples*
+
+            *continue with all issues*
+        
+        Project Plan:
+        {project_plan_json}
